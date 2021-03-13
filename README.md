@@ -6,7 +6,7 @@ Primera entrega
 
 * Activalo en windows: `C:\> env\Scripts\activate.bat`
 
-* Activalo en linux: `source source venv/bin/activate`
+* Activalo en linux: `source venv/bin/activate`
 
 ⛲ Instala dependecias: `pip install -r requirements.txt`
 
