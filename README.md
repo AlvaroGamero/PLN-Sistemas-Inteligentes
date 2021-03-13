@@ -6,7 +6,9 @@ Primera entrega
 
 * Activalo en windows: `C:\> env\Scripts\activate.bat`
 
-* Activalo en linux:`pip install -r requirements.txt`
+* Activalo en linux: `source source venv/bin/activate`
+
+⛲ Instala dependecias: `pip install -r requirements.txt`
 
 🚀 Ejecuta el programa: `python app.py`
 
