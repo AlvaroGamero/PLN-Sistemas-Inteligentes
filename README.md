@@ -4,7 +4,7 @@ Primera entrega
 
 🛠️ Crea virtual env: `virtualenv venv`
 
-* Activalo en windows: `C:\> env\Scripts\activate.bat`
+* Activalo en windows: `C:\> env\Scripts\activate.bat` o `venv\Scripts\activate`
 
 * Activalo en linux: `source venv/bin/activate`
 
