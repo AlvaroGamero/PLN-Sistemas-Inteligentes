@@ -1,6 +1,6 @@
 # PLN-Sistemas-Inteligentes
 
-Primera entrega
+Actividad sistemas inteligentes que consiste leer una serie de tweets de un archivo .xlsx, realizar una limpieza, crear un vector de tokens y buscar los tweets más similares a la consulta introducida por el usuario. Como funcionalidad extra tambien mostramos los tweets más diferentes y un analisis del sentimiento de los tops.
 
 🛠️ Crea virtual env: `virtualenv venv`
 
