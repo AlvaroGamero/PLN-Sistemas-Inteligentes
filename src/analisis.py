@@ -33,14 +33,14 @@ def makeQuery():
 
 def limpieza(texto):
     spanish_stemmer = nltk.SnowballStemmer('spanish')
-    clean_text = re.sub("[%s]" % re.escape(string.punctuation), " ", texto)
+    clean_text = re.sub("[%s]" % re.escape(string.punctuation), " ", texto) #quita signos de puntuacion
     clean_text = clean_text.lower()
-    clean_text = re.sub('\w*\d\w*', ' ', clean_text)
+    clean_text = re.sub('\w*\d\w*', ' ', clean_text) #quita los numeros
     clean_text = re.sub('@', ' ', clean_text)
     clean_text = re.sub('http.*', ' ', clean_text)
-    tokenized = word_tokenize(clean_text)
+    tokenized = word_tokenize(clean_text) #divide en palabras sueltas
     for j in range(len(tokenized)):
-        tokenized[j] = format(spanish_stemmer.stem(tokenized[j]))
+        tokenized[j] = format(spanish_stemmer.stem(tokenized[j])) #saca las palabras
     stemmed = ' '.join(tokenized)
     return stemmed
 
@@ -59,10 +59,11 @@ def getSentiment(textInput):
     return analysisPol
 
 def similitud(corpus, df):
-    l1 = list(range(len(corpus) - 1))
-    pairs = list(product(l1, [len(corpus) - 1]))
+    l1 = list(range(len(corpus) - 1)) #rango del corpus menos la query
+    pairs = list(product(l1, [len(corpus) - 1])) #creas pares con la lista y el query
+    #calculamos la similitud entre los tweets y la query
     results_tfidf = [cosine_similarity([corpus[a_index]], [corpus[b_index]]) for (a_index, b_index) in pairs]
-    listaTop = sorted(zip(results_tfidf, pairs), reverse=True)[:5]
+    listaTop = sorted(zip(results_tfidf, pairs), reverse=True)[:5] #almacenas el resultado por pares de la similitud
     listaBot = sorted(zip(results_tfidf, pairs), reverse=False)[:5]
     listaSentTop = []
     listaSentBot = []
