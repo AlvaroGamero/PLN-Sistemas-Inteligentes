@@ -51,13 +51,11 @@ def makeCorpus(df):
 
 def getSentiment(textInput):
     analysis = TextBlob(textInput)
-    try:
-        language = analysis.detect_language()
-        # La traduccion peta en algunas querys por ejemplo futbol por eso la he comentado
-        if language != 'en':
-            analysis = analysis.translate(to='en')
-    except:
-        print("La traducción no ha funcionado")
+    language = analysis.detect_language()
+    # La traduccion peta en algunas querys por ejemplo futbol por eso la he comentado
+    if language != 'en':
+        analysis = analysis.translate(to='en')
+    print("La traducción no ha funcionado")
     analysisPol = analysis.sentiment.polarity
     analysisSub = analysis.sentiment.subjectivity
     print(f'Tiene una polaridad de {analysisPol} y una subjectibidad de {analysisSub}')
