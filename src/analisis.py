@@ -55,7 +55,6 @@ def getSentiment(textInput):
     # La traduccion peta en algunas querys por ejemplo futbol por eso la he comentado
     if language != 'en':
         analysis = analysis.translate(to='en')
-    print("La traducción no ha funcionado")
     analysisPol = analysis.sentiment.polarity
     analysisSub = analysis.sentiment.subjectivity
     print(f'Tiene una polaridad de {analysisPol} y una subjectibidad de {analysisSub}')
